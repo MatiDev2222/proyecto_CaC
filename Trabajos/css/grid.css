@@ -1,0 +1,352 @@
+@import url("https://fonts.googleapis.com/cs2?family=Public+Sans8");
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+    /*padding: 90px 20px 0;*/
+}
+
+.grid-container > *{
+    box-shadow: -1px 1px 7px 0px rgba(0,0,0,0.75);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.header{
+    grid-area: header;
+    background-color: rgb(141, 86, 42);
+    /*
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;*/
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    max-width: 990px;
+    margin: 0 auto;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.logo{
+    font-family: "Bad Script", cursive;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 20px;
+    line-height: 40px;
+    display: flex;
+}
+
+.name{
+    margin-left: 70px;
+}
+
+img{
+    height: 40px;
+    padding-right: 30px; 
+    display: flex;
+}
+
+.nav-menu{
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    margin-right: 20px;
+    list-style: none;
+    background-color: #8b694e;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+
+    left: 100%;
+    transition: left 0.3s;
+    /* para que aparezca una barra de navegacion cuando la pantalla sea muy chica,
+    no me funciona :(*/
+    /*height: cal(100% - 40px);
+    overflow-y: auto;*/
+}
+
+.nav-menu-item{
+    font-size: 20px;
+    margin: 0 10px;
+    line-height: 70px;
+    text-transform: uppercase;
+    width: max-content;
+}
+
+.nav-menu-link{
+    padding: 8px 12px;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.nav-menu-link:hover{
+    transition: 0.5s;
+    border-bottom: 1px solid white;
+}
+
+.nav-toggle{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 40px;
+    display: block;
+    cursor: pointer;
+}
+
+.nav-menu_visible{
+    left: 0;
+}
+
+.nav-toggle:focus:not(:focus-visible){
+    outline: none;
+}
+
+.sidebar{
+    grid-area: sidebar;
+    background-image: url(https://img.freepik.com/fotos-premium/copa-vino-mesa-madera-restaurante_111599-382.jpg);
+}
+
+#apartado{
+    text-align: center;
+    padding: 10px 0;
+    margin: 30px 5px;
+    background-color: rgba(134, 134, 134, 0.377);
+    height: 90%;
+}
+
+#apartado h3 {
+    color: hsl(28, 100%, 80%);
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+#apartado p {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+#resto-span{
+    color: rgb(218, 156, 85);
+    font-size: 50px;
+    font-family: "Bad Script", cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#hora-span{
+    color:bisque;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#boton-reserva{
+    margin-top: 30px;
+    background: rgba(0, 0, 0, 0.486);
+    color: white;
+    border: none;
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+
+#boton-reserva:hover{
+    color: black;
+    background-color: rgba(255, 255, 255, 0.507);
+    transition: 0.5s;
+}
+
+.main{
+    grid-area: main;
+    background-color: #fabb68;
+}
+
+#intro{
+    text-align: center;
+    padding-top: 10px;
+}
+
+#intro h3 {
+    color: hsl(27, 26%, 29%);
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+#intro p {
+    font-size: 12px;
+    color: rgb(54, 54, 54);
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: rgb(61, 59, 55);
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template:
+        "header"  100px
+        "main"    auto
+        "sidebar" 500px
+        "footer"  100px;
+}
+
+@media (min-width: 600px){ 
+    .nav-toggle{
+        display: none;
+    }
+
+    .logo{
+        font-size: 30px;
+        line-height: 80px;
+    }
+  
+    .name{
+        width: max-content;
+        margin-left: 0;
+    }
+    
+    img{
+        height: 80px;
+    }
+
+    .nav-menu{
+        flex-direction: initial;
+        margin-right: 40px;
+        margin-left: -20px;
+        align-items: initial;
+        position: initial;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0 30px 0 2cm;
+    }
+
+    .nav-menu-item{
+        line-height: 80px;
+    }
+
+    .nav-menu-link:hover{
+        background-color: #ffc87f3a;
+        color: white;
+        border: none;
+        transition: 0.5s;
+    }
+
+    #apartado{
+        text-align: center;
+        padding: 10px 0;
+        margin: 50px 5px;
+        height: 77.5%;
+    }
+    
+    #apartado h3 {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    #apartado p {
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 1.8;
+    }
+    
+    #resto-span{
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+    
+    #hora-span{
+        font-size: 30px;
+    }
+
+    .grid-container{
+        /*grid-template-columns: 200px auto;
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas:
+        "header  header"
+        "navbar  navbar"
+        "sidebar main"
+        "footer  footer"; forma mas larga de hacerlo*/
+        /*si se le agrega un . a alguna clase de abajo, queda vacio*/
+
+        grid-template:  
+        "header  header" 100px
+        "sidebar main"   auto
+        "footer  footer" 100px /
+        200px    auto;
+    }
+
+}
+
+@media (min-width: 900px){
+    .grid-container{
+        grid-template:
+        "header   header  header"  100px
+        "main     main    sidebar" auto
+        "footer   footer  footer"  100px /
+        200px     auto    400px;
+    }
+
+    .name{
+        font-size: 50px;
+    }
+
+    img{
+        margin-left: -5cm;
+    }
+
+    .nav-menu{
+        padding: 0 20px 0 10cm;
+    }
+
+    #apartado{
+        text-align: center;
+        padding-top: 30px;
+        margin-left: 20px;
+        height: 90%;
+    }
+    
+    #apartado h3 {
+        margin-bottom: 50px;
+        font-size: 60px;
+
+    }
+    #apartado p {
+        font-size: 18px;
+        letter-spacing: 1px;
+        line-height: 1.5;
+    }
+    
+    #resto-span{
+        font-size: 80px;
+        letter-spacing: 1px;
+    }
+
+    #hora-span{
+        font-size: 50px;
+    }
+}
